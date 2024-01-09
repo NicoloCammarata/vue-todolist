@@ -13,11 +13,11 @@
     </header>
     <div id="app">
         
-        <input type="text"> <button >invia</button>
+        <input type="text" > <button >invia</button>
         <ul >
             
-            <li :class="addToList(index)" v-for="(signleWork, i) in work">
-                {{ signleWork.compiti }}
+            <li  v-for="(signleWork, i) in work">
+                {{ signleWork.compiti }}<button @click="removeToList(i)">x</button>
             </li>
 
         </ul>
