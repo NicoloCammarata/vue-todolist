@@ -8,3 +8,7 @@
 .barrato{
     text-decoration: line-through;
 }
+
+li button{
+    margin-left: 5px;
+}

@@ -1,7 +1,7 @@
 /*
-MILESTONE 1
-Stampare all'interno di una lista HTML un item per ogni todo.
-Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
+MILESTONE 3
+Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul pulsante, 
+il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
 */
 
 const { createApp } = Vue;
@@ -21,23 +21,32 @@ createApp({
                 {
                     compiti: 'fare il bucato',
                     davvero: true
-                }
-            ]
+                },
+                
+            ],
+            
             
         };
     },
     methods: {
-        addToList(index) {
+        /*addToList(index) {
             if(this.work[index].davvero == true ){
-                console.log(this.work[index].compiti, index)
                 this.index ++;
                 
             }
             else if(this.work[index].davvero == false ){
-                console.log(index)
+
                 this.index ++;
                 return 'barrato'
             }
+           
+            
+        },*/
+        
+        removeToList(i) {
+            console.log(i, this.work[i].compiti)
+            this.work.splice(i, 1).compiti
+            
            
             
         }
