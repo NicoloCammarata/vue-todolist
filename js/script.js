@@ -8,8 +8,13 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            index: 0,
+            newWork:[
+                {
+                    compiti: ' ',
+                }
+            ],
             work: [
+                
                 {
                     compiti: 'fare i compiti',
                     davvero: true
@@ -29,25 +34,33 @@ createApp({
         };
     },
     methods: {
-        /*addToList(index) {
-            if(this.work[index].davvero == true ){
-                this.index ++;
+        addToList(i) {
+            if(this.work[i].davvero == true ){
+                this.i ++;
+                return ''
                 
             }
-            else if(this.work[index].davvero == false ){
+            else if(this.work[i].davvero == false ){
 
-                this.index ++;
+                this.i ++;
                 return 'barrato'
             }
            
             
-        },*/
+        },
         
         removeToList(i) {
             console.log(i, this.work[i].compiti)
             this.work.splice(i, 1).compiti
             
            
+            
+        },
+        addWork(){
+            console.log(this.newWork[0].compiti)
+            this.work.push(this.newWork[0])
+            this.newWork[0]= ''
+            
             
         }
     }

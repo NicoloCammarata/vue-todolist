@@ -13,14 +13,19 @@
     </header>
     <div id="app">
         
-        <input type="text" > <button >invia</button>
-        <ul >
+        <input type="text" v-model="newWork[0].compiti"> <button @click="addWork()">invia</button>
+        {{ newWork[0].compiti }}
+        <ul v-if="work.length > 0">
             
-            <li  v-for="(signleWork, i) in work">
+            <li :class="addToList(i)" v-for="(signleWork, i) in work">
                 {{ signleWork.compiti }}<button @click="removeToList(i)">x</button>
             </li>
+            
 
         </ul>
+        <p v-else>
+            no lavori
+        </p>
         
 
     </div>
